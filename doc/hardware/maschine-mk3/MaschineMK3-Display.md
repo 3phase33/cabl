@@ -104,7 +104,7 @@ There is a possibility that some value might be transparent, but this needs to b
         </td>
         <td style="white-space:nowrap;font-family:monospace;text-align: center;">
             <b>Header 2</b><br/><br/>
-            Always 0x80
+            Always 0x00
         </td>
         <td style="white-space:nowrap;font-family:monospace;text-align: center;">
             <b>Header 3</b><br/><br/>
