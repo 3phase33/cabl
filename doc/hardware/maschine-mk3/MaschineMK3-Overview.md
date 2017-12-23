@@ -21,13 +21,13 @@ I:  If#= 6 Alt= 0 #EPs= 0 Cls=fe(app. ) Sub=01 Prot=01 Driver=(none)
 
 The Native Instruments Maschine MK3 provides several USB endpoints:
 
-| Interface Number | Endpoint  | Description                                  |
-|------------------|-----------|----------------------------------------------|
-| #0               | USB Audio | -                                            |
-| #1               | USB Audio | -                                            |
-| #2               | USB Audio | -                                            |
-| #3               | USB Audio | -                                            |
-| #4               | 0x83      | Input Data (Buttons, Knobs etc)              |
-| #4               | 0x03      | Output Data (LEDs)                           |
-| #5               | 0x04      | [Bulk, Display Data](MaschineMK3-Display.md) |
-| #6               | -         | Firmware Update                              |
+| Interface Number | Endpoint  | Description                                                |
+|------------------|-----------|------------------------------------------------------------|
+| #0               | USB Audio | -                                                          |
+| #1               | USB Audio | -                                                          |
+| #2               | USB Audio | -                                                          |
+| #3               | USB Audio | -                                                          |
+| #4               | 0x83      | [Input Data (Buttons, Knobs etc)](MaschineMK3-HIDInput.md) |
+| #4               | 0x03      | Output Data (LEDs)                                         |
+| #5               | 0x04      | [Bulk, Display Data](MaschineMK3-Display.md)               |
+| #6               | -         | Firmware Update                                            |
