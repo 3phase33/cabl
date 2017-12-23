@@ -28,6 +28,6 @@ The Native Instruments Maschine MK3 provides several USB endpoints:
 | #2               | USB Audio | -                                                          |
 | #3               | USB Audio | -                                                          |
 | #4               | 0x83      | [Input Data (Buttons, Knobs etc)](MaschineMK3-HIDInput.md) |
-| #4               | 0x03      | Output Data (LEDs)                                         |
+| #4               | 0x03      | [Output Data (LEDs)](MaschineMK3-HIDOutput.md)             |
 | #5               | 0x04      | [Bulk, Display Data](MaschineMK3-Display.md)               |
 | #6               | -         | Firmware Update                                            |
