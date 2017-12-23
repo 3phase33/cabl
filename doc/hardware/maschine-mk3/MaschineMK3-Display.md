@@ -2,6 +2,10 @@
 
 The Maschine MK3 Displays are listening on `Interface #5`, `Endpoint 0x04`.
 
+## Display Information
+
+Both displays are 480x272 pixels each.
+
 ## RGB565 Pixel Format
 
 The protocol uses the RGB565 pixel format, which is basically 24 bit RGB converted to
