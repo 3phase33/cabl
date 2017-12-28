@@ -339,7 +339,7 @@ Each command consists of 4 bytes with an optional multiple of 4 bytes data:
     </tr>
     <tr valign="top">
         <td style="white-space:nowrap;font-family:monospace;text-align: center;">
-            <b>0x04</b>
+            <b>0x40</b>
         </td>
         <td style="white-space:nowrap;font-family:monospace;text-align: center;">
             <b>End of data</b><br/><br/>
