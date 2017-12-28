@@ -7,6 +7,11 @@
 
 #include "cabl/comm/Transfer.h"
 #include <iostream>
+#include "cabl/util/hexdump.hpp"
+#include <fstream>
+#include <iterator>
+#include <string>
+#include <vector>
 
 namespace sl
 {
@@ -44,6 +49,13 @@ Transfer::Transfer(const tRawData& header_, const uint8_t* pData_, size_t dataLe
   std::copy(pData_, pData_ + dataLength_, &m_data[header_.size()]);
 }
 
+Transfer::Transfer(const tRawData& header_, const uint8_t* pData_, size_t dataLength_, const tRawData& suffix_)
+  {
+    m_data.resize(header_.size() + dataLength_ + suffix_.size());
+    std::copy(header_.begin(), header_.end(), m_data.begin());
+    std::copy(pData_, pData_ + dataLength_, &m_data[header_.size()]);
+    std::copy(suffix_.begin(), suffix_.end(), &m_data[header_.size() + dataLength_]);
+  }
 //--------------------------------------------------------------------------------------------------
 
 bool Transfer::operator==(const Transfer& other_) const
@@ -76,6 +88,13 @@ void Transfer::setData(const uint8_t* data_, size_t length_)
 
   m_data.resize(length_);
   std::copy(data_, (data_ + length_), m_data.begin());
+}
+
+void Transfer::dump()
+{
+    if (m_data.size() > 0) {
+   HexDump::dumpHexLine(std::cout, m_data);
+    }
 }
 
 //--------------------------------------------------------------------------------------------------

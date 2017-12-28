@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <cmath>
 #include <sstream>
+#include <iostream>
 
 #include <unmidify.hpp>
 
@@ -43,6 +44,9 @@ void DeviceTest::initDevice()
     device()->ledArray(i)->setValue(0.5, kColor_Blue);
   }
 
+  std::cout << device()->numOfGraphicDisplays() << std::endl;
+  std::cout << "BLUB12B" << std::endl;
+
   for(unsigned i  = 0; i< device()->numOfGraphicDisplays(); i++)
   {
     unsigned w = device()->graphicDisplay(i)->width();
@@ -64,12 +68,16 @@ void DeviceTest::initDevice()
 
 void DeviceTest::render()
 {
+
+
 }
 
 //--------------------------------------------------------------------------------------------------
 
 void DeviceTest::buttonChanged(Device::Button button_, bool buttonState_, bool shiftState_)
 {
+
+	//std::cout << "buttonChanged: #" << +static_cast<uint8_t>(button_) << " value" << buttonState_ << std::endl;
   device()->setButtonLed(
     button_, buttonState_ ? (shiftState_ ? kColor_Red : kColor_Yellow) : kColor_Black);
 }
@@ -78,6 +86,8 @@ void DeviceTest::buttonChanged(Device::Button button_, bool buttonState_, bool s
 
 void DeviceTest::encoderChanged(unsigned encoder_, bool valueIncreased_, bool shiftPressed_)
 {
+	//std::cout << "encoderChanged: #" << encoder_ << "value" << valueIncreased_ << std::endl;
+
   std::string value = "Enc#" + std::to_string(static_cast<int>(encoder_)) + ( valueIncreased_ ? " increased" : " decreased" );
 
   device()->textDisplay(0)->putText(value.c_str(), 0);
@@ -98,6 +108,7 @@ void DeviceTest::keyChanged(unsigned index_, double value_, bool shiftPressed_)
 
 void DeviceTest::controlChanged(unsigned pot_, double value_, bool shiftPressed_)
 {
+	//std::cout << "controlChanged: #" << pot_ << "value" << value_ << std::endl;
   std::string value = "Pot#" + std::to_string(static_cast<int>(pot_)) + " " + std::to_string(static_cast<int>(value_ * 100));
 
   device()->textDisplay(0)->putText(value.c_str(), 0);

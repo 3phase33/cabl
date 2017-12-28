@@ -58,7 +58,7 @@ public:
   bool operator>=(const Color& other_) const;
 
   unsigned getValue() const;
-
+  uint16_t getRGB565() const;
 
 private:
   friend std::ostream& operator<<(std::ostream& out_, const Color& c_);

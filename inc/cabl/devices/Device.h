@@ -200,6 +200,12 @@ public:
     Delete,
     Undo,
 
+	// Maschine MK3
+	Notes,
+	Mk3Keyboard,
+	Chords,
+	FixedVelocity,
+
     Unknown,
   };
   // clang-format on

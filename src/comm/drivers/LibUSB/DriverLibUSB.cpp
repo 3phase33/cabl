@@ -231,10 +231,16 @@ tPtr<DeviceHandleImpl> DriverLibUSB::connect(const DeviceDescriptor& device_)
 
   libusb_free_device_list(devices, 1);
 
-  libusb_set_configuration(pCurrentDevice, 1);
-  libusb_claim_interface(pCurrentDevice, 0);
+    //libusb_set_configuration(pCurrentDevice, 1);
 
-  libusb_set_interface_alt_setting(pCurrentDevice, 0, 1);
+    int ret;
+    ret = libusb_claim_interface(pCurrentDevice, 5);
+
+  if (ret != 0) {
+      M_LOG("[LibUSB] ERROR CLAIMING INTERFACE, ERROR " << ret);
+  }
+
+    libusb_set_interface_alt_setting(pCurrentDevice, 0, 1);
 
   if (pCurrentDevice == nullptr || !bConnected)
     return nullptr;

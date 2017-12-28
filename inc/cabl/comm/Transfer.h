@@ -9,6 +9,8 @@
 
 #include "cabl/util/Types.h"
 #include <cstdint>
+#include <ios>
+#include <sstream>
 
 #ifdef CABL_USE_NETWORK
 #include <cereal/cereal.hpp>
@@ -32,6 +34,7 @@ public:
   Transfer(tRawData data_);
   Transfer(const tRawData& header_, const tRawData& data_);
   Transfer(const tRawData& header_, const uint8_t* pData_, size_t dataLength_);
+  Transfer(const tRawData& header_, const uint8_t* pData_, size_t dataLength_, const tRawData& suffix_);
 
   bool operator==(const Transfer& other_) const;
   bool operator!=(const Transfer& other_) const;
@@ -58,7 +61,8 @@ public:
     return m_data;
   }
   void setData(const uint8_t*, size_t);
-
+  void dump ();
+  
   size_t size() const noexcept
   {
     return m_data.size();

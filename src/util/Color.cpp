@@ -216,6 +216,11 @@ unsigned Color::getValue() const
   return (m_red << 16) | (m_green << 8) | m_blue;
 }
 
+uint16_t Color::getRGB565() const
+{
+  return (m_red << 11) | (m_green << 5) | m_blue;
+}
+
 //--------------------------------------------------------------------------------------------------
 
 std::ostream& operator<<(std::ostream& out_, const Color& c_)

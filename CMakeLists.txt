@@ -382,13 +382,17 @@ set(
     src/devices/ni/MaschineMK1.cpp
     src/devices/ni/MaschineMK2.h
     src/devices/ni/MaschineMK2.cpp
+    src/devices/ni/MaschineMK3.h
+    src/devices/ni/MaschineMK3.cpp
     src/devices/ni/MaschineMikroMK1.h
     src/devices/ni/MaschineMikroMK1.cpp
     src/devices/ni/MaschineMikroMK2.h
     src/devices/ni/MaschineMikroMK2.cpp
     src/devices/ni/TraktorF1MK2.h
     src/devices/ni/TraktorF1MK2.cpp
-)
+    src/devices/ni/MaschineMK3Display.cpp
+    src/devices/ni/MaschineMK3Display.h)
+
 
 set(
   src_gfx_displays_SRCS
@@ -399,8 +403,12 @@ set(
     src/gfx/displays/GDisplayMaschineMikro.cpp
     src/gfx/displays/GDisplayMaschineMK1.h
     src/gfx/displays/GDisplayMaschineMK1.cpp
+    src/gfx/displays/GDisplayMaschineMK3.h
+    src/gfx/displays/GDisplayMaschineMK3.cpp
     src/gfx/displays/GDisplayMaschineMK2.h
     src/gfx/displays/GDisplayMaschineMK2.cpp
+    src/gfx/displays/GDisplayMaschineMK3.h
+    src/gfx/displays/GDisplayMaschineMK3.cpp
     src/gfx/displays/GDisplayPush2.h
     src/gfx/displays/GDisplayPush2.cpp
     src/gfx/displays/TextDisplay7Segments.h
